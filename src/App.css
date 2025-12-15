@@ -1,0 +1,322 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700,900&display=swap');
+
+:root {
+  /* Neo-Organic Palette */
+  --primary: #1A1A1A;
+  /* Soft Black */
+  --accent: #FF5E5B;
+  /* Sunset Coral */
+  --accent-hover: #E04E4B;
+  --secondary: #2D6A4F;
+  /* Deep Forest Green */
+  --bg-color: #F9F9F5;
+  /* Warm Oatmeal */
+  --card-bg: rgba(255, 255, 255, 0.85);
+  /* Glassmorphism base */
+  --surface: #FFFFFF;
+
+  /* Typography */
+  --font-heading: 'Clash Display', sans-serif;
+  --font-body: 'Satoshi', sans-serif;
+
+  /* Spacing & Radius */
+  --radius-lg: 24px;
+  --radius-pill: 50px;
+  --radius-organic: 30px 4px 30px 4px;
+  /* Distinctive leaf shape */
+
+  /* Shadows */
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255, 94, 91, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(45, 106, 79, 0.08) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 10px;
+}
+
+/* Utility Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Base Overrides */
+.pt-90 {
+  padding-top: 120px !important;
+}
+
+/* Space for floating nav */
+
+/* Navbar - Floating Pill */
+.header-search-area {
+  background: transparent !important;
+  padding: 20px 0 !important;
+  border-bottom: none !important;
+}
+
+#sticky-header {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+  margin: 10px auto;
+  width: 90%;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.menu-area {
+  background: transparent !important;
+}
+
+.main-menu ul li a {
+  font-family: var(--font-heading) !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary) !important;
+  position: relative;
+}
+
+.main-menu ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.main-menu ul li:hover>a::after {
+  width: 100%;
+}
+
+/* Category Menu Override */
+.category-menu {
+  border-radius: 0 0 20px 20px !important;
+  border: none !important;
+  box-shadow: var(--shadow-hover) !important;
+  top: 100% !important;
+  margin-top: 15px !important;
+}
+
+/* Hero Section Typography */
+h1.title,
+h2.title,
+h3.title,
+h4.title,
+h5.title,
+h6.title {
+  font-family: var(--font-heading) !important;
+}
+
+.slider-content h2 {
+  font-size: 4rem !important;
+  line-height: 1.1 !important;
+  margin-bottom: 25px !important;
+  color: var(--primary) !important;
+}
+
+.sub-title {
+  font-family: var(--font-body) !important;
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Buttons */
+.btn {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  padding: 12px 35px !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  border: 2px solid transparent !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn:hover {
+  background: var(--accent) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(255, 94, 91, 0.3) !important;
+}
+
+/* Product Cards */
+.sp-product-item,
+.discount-item,
+.best-deal-item {
+  background: var(--card-bg) !important;
+  border-radius: var(--radius-organic) !important;
+  padding: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: var(--shadow-soft) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  overflow: hidden;
+  position: relative;
+}
+
+.sp-product-item:hover,
+.discount-item:hover,
+.best-deal-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover) !important;
+  border-color: var(--accent) !important;
+}
+
+.sp-product-thumb img {
+  border-radius: 15px !important;
+  transition: transform 0.5s ease;
+}
+
+.sp-product-item:hover .sp-product-thumb img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.sp-product-content .title a {
+  font-family: var(--font-heading) !important;
+  font-size: 1.2rem !important;
+  color: var(--primary) !important;
+  text-decoration: none;
+}
+
+/* Distinctive Price Tag */
+.sp-product-content p {
+  color: var(--secondary) !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+  background: rgba(45, 106, 79, 0.1);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  margin-top: 80px;
+}
+
+.footer-wrap {
+  background: #111 !important;
+  /* Dark footer */
+  color: #a0a0a0 !important;
+  border-radius: 40px 40px 0 0;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-wrap::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: var(--accent);
+  filter: blur(80px);
+  opacity: 0.1;
+  border-radius: 50%;
+}
+
+.footer-wrap h3 {
+  color: #fff !important;
+  font-family: var(--font-heading) !important;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.footer-links li a {
+  color: #a0a0a0 !important;
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: var(--accent) !important;
+  padding-left: 8px;
+}
+
+/* Utilities */
+.section-title h2 {
+  font-size: 3.5rem !important;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 12px;
+  bottom: 8px;
+  right: -5px;
+  background: var(--accent);
+  opacity: 0.2;
+  z-index: -1;
+  border-radius: 20px;
+}
